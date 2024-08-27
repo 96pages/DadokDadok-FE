@@ -27,6 +27,12 @@ const inputstyle = css`
   flex: 4;
 `;
 
+const warning = css`
+  font-size: 12px;
+  margin-left: 10px;
+  color: #F67373;
+`
+
 const btn_yellow = css`
   margin-left: 10px;
   background-color: #f1b24a !important;
@@ -69,6 +75,7 @@ const RegisterPage = () => {
         </div>
         <div css={item_wrap}>
           <span>비밀번호</span>
+          <span css={warning}>숫자, 특수문자 포함 8~12자로 입력해주세요</span>
           <div css={input_wrap}>
             <input css={inputstyle} placeholder="비밀번호"></input>
           </div>
@@ -76,7 +83,7 @@ const RegisterPage = () => {
         <div css={item_wrap}>
           <span>비밀번호 확인</span>
           <div css={input_wrap}>
-            <input css={inputstyle} placeholder="비밀번호"></input>
+            <input css={inputstyle} placeholder="비밀번호 확인"></input>
           </div>
         </div>
         <div css={item_wrap}>
