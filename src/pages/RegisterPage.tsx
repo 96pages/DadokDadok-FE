@@ -30,8 +30,8 @@ const inputstyle = css`
 const warning = css`
   font-size: 12px;
   margin-left: 10px;
-  color: #F67373;
-`
+  color: #f67373;
+`;
 
 const btn_yellow = css`
   margin-left: 10px;
@@ -48,7 +48,7 @@ const select_style = css`
 `;
 
 const register_btn = css`
-margin-top: 20px;
+  margin-top: 20px;
   background-color: #4d7742 !important;
   width: 408px;
   height: 3rem;
