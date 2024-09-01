@@ -1,0 +1,29 @@
+.icon-main {
+  width: 26px; height: 26px;
+  background: url('main_icon.png') -0 -0;
+}
+
+.icon-record {
+  width: 26px; height: 26px;
+  background: url('main_icon.png') -26px -0;
+}
+
+.icon-mypage {
+  width: 26px; height: 26px;
+  background: url('main_icon.png') -52px -0;
+}
+
+.icon-like {
+  width: 26px; height: 26px;
+  background: url('main_icon.png') -78px -0;
+}
+
+.icon-logout {
+  width: 26px; height: 26px;
+  background: url('main_icon.png') -104px -0;
+}
+
+.icon-register {
+  width: 26px; height: 26px;
+  background: url('main_icon.png') -130px -0;
+}

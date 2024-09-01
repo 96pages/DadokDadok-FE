@@ -3,7 +3,7 @@ import "./App.css";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import FindPassPage from "./pages/FindPassPage";
-// import MainPage from "./pages/MainPage";
+import MainPage from "./pages/MainPage";
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
       <Route path="/" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/findpassword" element={<FindPassPage />} />
+      <Route path="/main" element={<MainPage />} />
     </Routes>
   );
 }
