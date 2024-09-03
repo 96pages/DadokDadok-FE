@@ -9,6 +9,7 @@ const content_wrap = css`
   flex-direction: column;
   height: calc(100% - 120px);
   margin-top: 120px;
+  width: 200px;
 `;
 
 const user_wrap = css`
