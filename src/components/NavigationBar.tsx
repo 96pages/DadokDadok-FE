@@ -3,6 +3,7 @@ import "../styles/navIconPos.css";
 import iconSprite from "../assets/main_icon.png";
 import iconSpriteWhite from "../assets/main_icon_white.png";
 import "../styles/navIconPos.css";
+import { useNavigate } from "react-router-dom";
 
 const content_wrap = css`
   display: flex;
@@ -74,6 +75,12 @@ const login_wrap = css`
 `;
 
 const NavigationBar = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
+  };
+
   return (
     <div css={content_wrap}>
       <div css={user_wrap}>
@@ -81,7 +88,7 @@ const NavigationBar = () => {
         <div>로그인하세요</div>
       </div>
       <div css={menu_wrap}>
-        <div>
+        <div onClick={() => handleNavigation("/main")}>
           <div css={icon_style} className="icon icon-main" />
           메인페이지
         </div>
@@ -89,7 +96,7 @@ const NavigationBar = () => {
           <div css={icon_style} className="icon icon-record" />
           독서 기록
         </div>
-        <div>
+        <div onClick={() => handleNavigation("/mypage")}>
           <div css={icon_style} className="icon icon-mypage" />
           마이페이지
         </div>

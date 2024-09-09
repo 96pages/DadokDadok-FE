@@ -4,6 +4,8 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import FindPassPage from "./pages/FindPassPage";
 import MainPage from "./pages/MainPage";
+import MypageContent from "./components/MypageContent";
+import MainContent from "./components/MainContent";
 
 function App() {
   return (
@@ -11,7 +13,10 @@ function App() {
       <Route path="/" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/findpassword" element={<FindPassPage />} />
-      <Route path="/main" element={<MainPage />} />
+      <Route element={<MainPage />}>
+        <Route path="/main" element={<MainContent />} />
+        <Route path="/mypage" element={<MypageContent />} />
+      </Route>
     </Routes>
   );
 }

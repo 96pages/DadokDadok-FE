@@ -95,6 +95,12 @@ const card = css`
         font-weight: 600;
       }
     }
+    .book_title {
+      font-weight: 600;
+    }
+    .author {
+      font-size: 0 0.8rem;
+    }
   }
   .calendar_wrap {
     width: 100%;
@@ -204,15 +210,18 @@ const calendar_bottom = css`
 
 const MainContent = () => {
   const today = new Date();
-  const [date, setDate] = useState(today);
+  const [date, setDate] = useState<Value>(today);
 
-  const handleDateChange = (newDate: Date) => {
+  type ValuePiece = Date | null;
+  type Value = ValuePiece | [ValuePiece, ValuePiece];
+
+  const handleDateChange = (newDate: Value) => {
     setDate(newDate);
   };
 
   const readDay = ["2024-06-12", "2024-09-02", "2024-09-22"];
 
-  const addDot = ({ date }) => {
+  const addDot = ({ date }: { date: Date }) => {
     const contents = [];
     if (readDay.find((day) => day === moment(date).format("YYYY-MM-DD"))) {
       contents.push(
@@ -257,8 +266,8 @@ const MainContent = () => {
           <div className="text_big">오늘의 추천 도서</div>
           <div className="image_wrap">이미지</div>
           <div className="bottom_wrap">
-            <div>책 제목</div>
-            <div>저자 이름</div>
+            <div className="book_title">책 제목</div>
+            <div className="author">저자 이름</div>
           </div>
         </div>
         <div css={card}>

@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import NavigationBar from "../components/NavigationBar";
-import MainContent from "../components/MainContent";
+import { Outlet } from "react-router-dom";
 
 const container = css`
   background-color: #4d7742;
@@ -50,7 +50,7 @@ const MainPage = () => {
           <NavigationBar />
         </div>
         <div css={main_wrap}>
-          <MainContent />
+          <Outlet />
         </div>
       </div>
     </div>
