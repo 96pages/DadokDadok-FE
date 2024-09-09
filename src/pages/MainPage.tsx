@@ -5,6 +5,8 @@ import MainContent from "../components/MainContent";
 const container = css`
   background-color: #4d7742;
   height: 100vh;
+  min-width: 1300px;
+  min-height: 750px;
   display: flex;
 `;
 const logo = css`
@@ -23,7 +25,6 @@ const logo = css`
 const body_wrap = css`
   display: flex;
   background-color: #ffffff;
-  min-width: 1028px;
   margin: 30px;
   border-radius: 15px;
   width: 100%;
