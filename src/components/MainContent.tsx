@@ -5,6 +5,12 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import moment from "moment";
 
+const main_container = css`
+  flex: 1;
+  background-color: #f6f6f2;
+  margin: 20px;
+  border-radius: 15px;
+`;
 const main_wrap = css`
   text-align: center;
   display: flex;
@@ -232,62 +238,64 @@ const MainContent = () => {
   };
 
   return (
-    <div css={main_wrap}>
-      <div css={search_wrap}>
-        <div css={text_top}>오늘의 책을 검색해보세요</div>
-        <div css={search_box}>
-          <div>
-            <input placeholder="책 제목 / 저자 검색" />
-            <Button variant="contained" disableElevation>
-              검색
-            </Button>
-          </div>
-        </div>
-        <div>독서 기록 추가 및 목표 설정은 회원만 이용가능합니다</div>
-      </div>
-      <div css={cards_wrap}>
-        <div css={card}>
-          <div className="text_big">9월 목표 달성량</div>
-          <div style={{ width: "50%" }}>
-            <DoughnutChart />
-          </div>
-          <div className="bottom_wrap">
-            <div className="bottom_goal">
-              <span>현재 읽은 권수</span>
-              <span>4권</span>
-            </div>
-            <div className="bottom_goal">
-              <span>9월 목표 권수</span>
-              <span>10권</span>
+    <div css={main_container}>
+      <div css={main_wrap}>
+        <div css={search_wrap}>
+          <div css={text_top}>오늘의 책을 검색해보세요</div>
+          <div css={search_box}>
+            <div>
+              <input placeholder="책 제목 / 저자 검색" />
+              <Button variant="contained" disableElevation>
+                검색
+              </Button>
             </div>
           </div>
+          <div>독서 기록 추가 및 목표 설정은 회원만 이용가능합니다</div>
         </div>
-        <div css={card}>
-          <div className="text_big">오늘의 추천 도서</div>
-          <div className="image_wrap">이미지</div>
-          <div className="bottom_wrap">
-            <div className="book_title">책 제목</div>
-            <div className="author">저자 이름</div>
+        <div css={cards_wrap}>
+          <div css={card}>
+            <div className="text_big">9월 목표 달성량</div>
+            <div style={{ width: "50%" }}>
+              <DoughnutChart />
+            </div>
+            <div className="bottom_wrap">
+              <div className="bottom_goal">
+                <span>현재 읽은 권수</span>
+                <span>4권</span>
+              </div>
+              <div className="bottom_goal">
+                <span>9월 목표 권수</span>
+                <span>10권</span>
+              </div>
+            </div>
           </div>
-        </div>
-        <div css={card}>
-          <div className="calendar_wrap">
-            <Calendar
-              locale="kr"
-              calendarType="gregory"
-              onChange={handleDateChange}
-              value={date}
-              formatDay={(locale, date) =>
-                date.toLocaleString("en", { day: "numeric" })
-              }
-              prev2Label={null}
-              next2Label={null}
-              minDetail="month"
-              tileContent={addDot}
-            />
-            <div css={calendar_bottom}>
-              <div className="bottom_dot"></div>
-              <div className="bottom_text">책 읽은 날</div>
+          <div css={card}>
+            <div className="text_big">오늘의 추천 도서</div>
+            <div className="image_wrap">이미지</div>
+            <div className="bottom_wrap">
+              <div className="book_title">책 제목</div>
+              <div className="author">저자 이름</div>
+            </div>
+          </div>
+          <div css={card}>
+            <div className="calendar_wrap">
+              <Calendar
+                locale="kr"
+                calendarType="gregory"
+                onChange={handleDateChange}
+                value={date}
+                formatDay={(locale, date) =>
+                  date.toLocaleString("en", { day: "numeric" })
+                }
+                prev2Label={null}
+                next2Label={null}
+                minDetail="month"
+                tileContent={addDot}
+              />
+              <div css={calendar_bottom}>
+                <div className="bottom_dot"></div>
+                <div className="bottom_text">책 읽은 날</div>
+              </div>
             </div>
           </div>
         </div>

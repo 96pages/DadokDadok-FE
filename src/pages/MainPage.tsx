@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 const container = css`
   background-color: #4d7742;
   height: 100vh;
-  min-width: 1300px;
+  min-width: 1500px;
   min-height: 750px;
   display: flex;
 `;
@@ -32,12 +32,6 @@ const body_wrap = css`
 const nav_wrap = css`
   width: 200px;
 `;
-const main_wrap = css`
-  flex: 1;
-  background-color: #f6f6f2;
-  margin: 20px;
-  border-radius: 15px;
-`;
 
 const MainPage = () => {
   return (
@@ -49,9 +43,7 @@ const MainPage = () => {
         <div css={nav_wrap}>
           <NavigationBar />
         </div>
-        <div css={main_wrap}>
-          <Outlet />
-        </div>
+        <Outlet />
       </div>
     </div>
   );
