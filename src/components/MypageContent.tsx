@@ -1,5 +1,7 @@
 import { css } from "@emotion/react";
 import { Button } from "@mui/material";
+import BarChart from "./BarChart";
+import RadarChart from "./RadarChart";
 
 const mypage_container = css`
   flex: 1;
@@ -29,7 +31,7 @@ const user_text = css`
   .user_name {
     font-size: 1.5rem;
   }
-`
+`;
 const modify_btn = css`
   position: absolute;
   border-radius: 10px;
@@ -108,6 +110,11 @@ const genre_wrap = css`
   display: flex;
   justify-content: space-around;
 `;
+const genre_text = css`
+`
+const genre_graph = css`
+width: 50%;
+`
 
 const MypageContent = () => {
   return (
@@ -135,15 +142,19 @@ const MypageContent = () => {
           </div>
           <div css={graph_card}>
             <div className="graph_title">월별 독서 권수</div>
-            <div>그래프</div>
+            <div>
+              <BarChart />
+            </div>
           </div>
         </div>
         <div css={right_wrap}>
           <div css={genre_card}>
             <div css={genre_title}>나의 독서 성향</div>
             <div css={genre_wrap}>
-              <div>장르별 독서 퍼센트</div>
-              <div>그래프</div>
+              <div css={genre_text}>장르별 독서 퍼센트</div>
+              <div css={genre_graph}>
+                <RadarChart />
+              </div>
             </div>
           </div>
         </div>
